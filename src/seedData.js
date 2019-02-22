@@ -1,5 +1,5 @@
 export const todos = [
-  { name: "buy milk", isCompleted: true },
-  { name: "buy eggs", isCompleted: false },
-  { name: "learn react", isCompleted: false }
+  { id: 1, name: "buy milk", isCompleted: true },
+  { id: 2, name: "buy eggs", isCompleted: false },
+  { id: 3, name: "learn react", isCompleted: false }
 ];
