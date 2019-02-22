@@ -1,9 +1,10 @@
 import React from "react";
 
-function TodoItem({ name, isCompleted }) {
+function TodoItem({ id, name, isCompleted, handleClick }) {
+  
   return (
     <div>
-      <li>{name}</li>
+      <li onClick={() => handleClick(id)}>{name}</li>
     </div>
   );
 }
