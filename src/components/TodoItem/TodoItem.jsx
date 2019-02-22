@@ -1,12 +1,12 @@
 import React from "react";
 
 function TodoItem({ id, name, isCompleted, handleClick }) {
-  const getStyleCompleted = (value) => {
-    return value  && "line-through" 
+  const getStyleCompleted = () => {
+    return isCompleted  && "line-through" 
   }
   return (
     <div>
-      <li style={{"textDecoration" : getStyleCompleted(isCompleted) }} onClick={() => handleClick(id)}>{name}</li>
+      <li style={{"textDecoration" : getStyleCompleted() }} onClick={() => handleClick(id)}>{name}</li>
     </div>
   );
 }
