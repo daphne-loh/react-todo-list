@@ -49,6 +49,7 @@ class App extends Component {
 
   render() {
     const { data, inputBarValue, filterBarValue } = this.state;
+    const filteredList = data.filter(item => item.name.includes(filterBarValue))
 
     return (
       <main className="container">
@@ -59,7 +60,7 @@ class App extends Component {
           inputBarValue={inputBarValue}
         />
         <TodoFilterBar handleChange={this.handleSearchChange} filterBarValue={filterBarValue}/>
-        <TodoList data={data} handleClick={this.handleClick} searchTerm={filterBarValue} />
+        <TodoList data={filteredList} handleClick={this.handleClick} />
       </main>
     );
   }
