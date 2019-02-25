@@ -44,7 +44,7 @@ class App extends Component {
     const { data, inputBarValue } = this.state;
 
     return (
-      <React.Fragment>
+      <main className="container">
         <h1>Todo List</h1>
         <TodoCreationBar
           handleSubmit={this.handleSubmit}
@@ -52,7 +52,7 @@ class App extends Component {
           inputBarValue={inputBarValue}
         />
         <TodoList data={data} handleClick={this.handleClick} />
-      </React.Fragment>
+      </main>
     );
   }
 }

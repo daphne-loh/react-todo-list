@@ -5,7 +5,7 @@ function TodoItem({ id, name, isCompleted, handleClick }) {
 
   return (
     <div>
-      <li className={isCompleted ? "completed" : undefined} onClick={() => handleClick(id)}>{name}</li>
+      <li className={isCompleted ? "completed list-group-item" : "list-group-item"} onClick={() => handleClick(id)}>{name}</li>
     </div>
   );
 }
