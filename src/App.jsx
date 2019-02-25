@@ -3,11 +3,13 @@ import { cloneDeep } from "lodash";
 import { todos } from "./seedData";
 import { TodoList } from "./components/TodoList/TodoList";
 import TodoCreationBar from "./components/TodoCreationBar/TodoCreationBar";
+import TodoFilterBar from "./components/TodoFilterBar/TodoFilterBar";
 
 class App extends Component {
   state = {
     data: todos,
-    inputBarValue: ""
+    inputBarValue: "",
+    filterBarValue: ""
   };
 
   handleClick = itemId => {
@@ -24,34 +26,40 @@ class App extends Component {
     this.setState({ data: updatedState });
   };
 
-  handleSubmit = event => {
+  handleCreateSubmit = event => {
     event.preventDefault();
-    const {data, inputBarValue} = this.state;
+    const { data, inputBarValue } = this.state;
     const copy = cloneDeep(data);
     copy.push({
       id: data.length + 1,
       name: inputBarValue,
       isCompleted: false
     });
-    this.setState({data: copy})
+    this.setState({ data: copy });
   };
 
-  handleChange = event => {
+  handleCreateChange = event => {
     this.setState({ inputBarValue: event.target.value });
   };
 
+  handleSearchChange = event => {
+    this.setState({filterBarValue: event.target.value})
+  }
+
+
   render() {
-    const { data, inputBarValue } = this.state;
+    const { data, inputBarValue, filterBarValue } = this.state;
 
     return (
       <main className="container">
         <h1>Todo List</h1>
         <TodoCreationBar
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
+          handleSubmit={this.handleCreateSubmit}
+          handleChange={this.handleCreateChange}
           inputBarValue={inputBarValue}
         />
-        <TodoList data={data} handleClick={this.handleClick} />
+        <TodoFilterBar handleChange={this.handleSearchChange} filterBarValue={filterBarValue}/>
+        <TodoList data={data} handleClick={this.handleClick} searchTerm={filterBarValue} />
       </main>
     );
   }
