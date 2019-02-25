@@ -3,12 +3,12 @@ import TodoItem from "../TodoItem/TodoItem";
 
 export class TodoList extends Component {
 
-
   render() {
     const {searchTerm, data} = this.props
+    const filtering = item => item.name.includes(searchTerm)
     return (
       <ul className="list-group">
-        {data.filter(item => item.name.includes(searchTerm)).map(item => (
+        {data.filter(filtering).map(item => (
           <TodoItem
             id={item.id}
             name={item.name}
