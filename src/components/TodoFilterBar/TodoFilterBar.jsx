@@ -1,13 +1,13 @@
 import React from "react";
 
-function TodoFilterBar({ handleChange, value }) {
+function TodoFilterBar({ handleChange, filterBarValue }) {
   return (
     <form>
       <div className="input-group mb-3">
         <input
           className="form-control"
           type="text"
-          value={value}
+          value={filterBarValue}
           onChange={handleChange}
           placeholder="Search tasks..."
         />

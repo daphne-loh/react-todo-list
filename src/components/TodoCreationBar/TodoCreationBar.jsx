@@ -1,13 +1,13 @@
 import React from "react";
 
-function TodoCreationBar({ handleSubmit, handleChange, value }) {
+function TodoCreationBar({ handleSubmit, handleChange, inputBarValue }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group mb-3">
         <input
           className="form-control"
           type="text"
-          value={value}
+          value={inputBarValue}
           onChange={handleChange}
           placeholder="Create task..."
         />
