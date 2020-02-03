@@ -3,3 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+h1.strikethrough {
+  text-decoration: line-through;
+}
+
+input {
+  font-size: 32px;
+}
+
+button {
+  font-size: 32px;
+  background:pink;
+}
