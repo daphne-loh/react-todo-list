@@ -3,3 +3,5 @@ export const todos = [
   { name: "buy eggs", isCompleted: false },
   { name: "learn react", isCompleted: false }
 ];
+
+export default todos;
